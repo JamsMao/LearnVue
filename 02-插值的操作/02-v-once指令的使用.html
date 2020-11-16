@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <!-- 当内容改变的时候使用v-once指令的内容是没有改变的 -->
+        <h2 v-once>{{message}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: '钢铁侠',
+            }
+        })
+    </script>
+</body>
+</html>

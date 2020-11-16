@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<div id="app">-->
+<!--    <h2>当前计数： {{counter}}</h2>-->
+<!--    <button v-on:click="add">+</button>-->
+<!--    <button v-on:click="sub">-</button>-->
+<!--</div>-->
+
+<div id="app">
+    {{message}}
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: '钢铁侠',
+        }
+    })
+</script>
+
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            counter: 0,
+        },
+        methods: {
+            add: function () {
+                this.counter++;
+            },
+            sub: function () {
+                if(this.counter <= 0){
+                    this.counter = 0;
+                }else {
+                    this.counter--;
+                }
+            }
+        },
+        created: {},
+        mounted: {},
+    })
+
+</script>
+
+
+</html>

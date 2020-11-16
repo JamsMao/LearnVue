@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: red;
+        }
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--作业需求： 点击列表中的那一项，那么该项的文字颜色变成红色 -->
+    <div id="app">
+        <ul>
+            <li v-for="(options,index) in movies"
+                v-bind:class="{active: index == isActive}"
+                v-on:click="changeClass(index)">
+                {{options}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                movies: ['钢铁侠','忌日快乐','死亡飞车','算死命'],
+                isActive: 0,
+            },
+            methods: {
+                changeClass(index){
+                    this.isActive = index;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

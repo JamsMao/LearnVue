@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="app">
+        <h2 class="title" v-bind:class="[active,line]">{{message}}</h2>
+        <h2 class="title" v-bind:class="getClass()">{{message}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: '钢铁侠',
+                isActive: "jam",
+                isLine: 'nimo'
+            },
+            methods: {
+                getClass: function () {
+                    return [this.isActive,this.isLine];
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

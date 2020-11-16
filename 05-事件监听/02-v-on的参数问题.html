@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 事件调用的方法没有参数 -->
+        <button @click="btn1Clcik()">按钮1</button>
+        <button>按钮2</button>
+
+        <!-- 在事件定义时，写函数时省略了小括号，但是方法本身是需要一个参数的,
+         这个时候，vue会默认浏览器产生的event事件对象作为参数传入到方法-->
+        <button>按钮3</button>
+
+        <!-- 方法定义时，我们需要event对象，同事又需要其他参数 -->
+        <button @click="btn4Clcik">按钮4</button>
+        <button @click="btn5Clcik(123,$event)">按钮5</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                btn4Clcik(event){
+                    console.log(event);
+                },
+                btn5Clcik(abc,event){
+                    console.log(abc,event);
+                },
+            }
+        })
+    </script>
+</body>
+</html>

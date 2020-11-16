@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    [v-cloak]{
+        display: none;
+    }
+</style>
+<body>
+
+<div id="app" v-cloak>
+    <h2>{{message}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    // 在vue解析之前，div中有一个属性v-cloak
+    // 在vue解析之后，div中没有一个属性v-cloak
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: '钢铁侠',
+        }
+    })
+</script>
+
+</body>
+</html>

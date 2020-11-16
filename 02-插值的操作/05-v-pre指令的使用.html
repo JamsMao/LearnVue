@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        // 对内容原封不动的展示出来，不做任何解析
+        <h2 v-pre>{{message}}</h2>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: '钢铁侠',
+            }
+        })
+    </script>
+</body>
+</html>

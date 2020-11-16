@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="option in movies">{{option}}</li>
+    </ul>
+</div>
+
+
+
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            movies: ['钢铁侠','复仇者联盟','大话西游']
+        }
+    })
+</script>
+</html>
