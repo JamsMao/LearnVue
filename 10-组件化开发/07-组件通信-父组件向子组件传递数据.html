@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <cpn :movie="movies" :messages="message"></cpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <p>{{movie}}</p>
+            <h2>{{messages}}</h2>
+        </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const cpn = {
+            template: '#cpn',
+            props: ['movie','messages'],
+            data(){
+                return{}
+            },
+            methods: {
+
+            }
+
+        }
+
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: '钢铁侠',
+                movies: ['相机','手机','电脑','电视']
+            },
+            components:{
+                cpn
+            }
+        })
+    </script>
+
+</body>
+</html>

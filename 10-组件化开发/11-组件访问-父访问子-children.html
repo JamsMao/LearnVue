@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="app">
+        <cpn ref="cpn1"></cpn>
+        <button @click="onBtn">按钮</button>
+    </div>
+
+    <template id="cpn">
+        <div>
+            我是子组件
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: '钢铁侠',
+            },
+            components: {
+                cpn: {
+                    template: "#cpn",
+                    data(){
+                        return{
+                            name: '我是子组件'
+                        }
+                    },
+                    methods: {
+                        showMessage(){
+                            console.log('showMessage');
+                        }
+                    }
+                }
+            },
+            methods: {
+                onBtn(){
+                    // $children，父组件调用子组件方法
+                    console.log(this.$children);
+                    this.$children[0].showMessage();
+
+                    //$ref => 对象类型，默认是一个空的对象
+                    console.log(this.$refs.cpn1.name);
+
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

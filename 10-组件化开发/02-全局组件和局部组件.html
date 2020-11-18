@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="app">
+        <my-cpn></my-cpn>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 1.创建组件构造器
+        const myComponent = Vue.extend({
+            template: `
+                <div>
+                    <h2>我是标题</h2>
+                    <p>我是内容，哈哈哈哈</p>
+                </div>`
+        })
+        // 2.注册组件（全局组件，意味着可以在多个vue的实例下面使用）
+        // Vue.component('my-cpn',myComponent);
+
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: '钢铁侠',
+            },
+            // 局部组件
+            components: {
+                myCpn: myComponent
+            }
+        })
+    </script>
+
+</body>
+</html>
